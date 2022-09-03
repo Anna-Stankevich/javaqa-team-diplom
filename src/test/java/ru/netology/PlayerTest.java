@@ -3,18 +3,32 @@ package ru.netology;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 public class PlayerTest {
 
-    private GameStore store = new GameStore();
-    Game game1 = store.publishGame("Igra1", "Fights");
-    Game game2 = store.publishGame("Igra2", "Fights");
-    Game game3 = store.publishGame("Igra3", "Race");
-    Game game4 = store.publishGame("Igra4", "Race");
-    Game game5 = store.publishGame("Igra5", "MMORPG");
-    Game game6 = store.publishGame("Igra6", "MMORPG");
-    Game game7 = store.publishGame("Igra7", "Аркады");
-    Game game8 = store.publishGame("Igra8", "Аркады");
+    private GameStore store = null;
+    Game game1 = null;
+    Game game2 = null;
+    Game game3 = null;
+    Game game4 = null;
+    Game game5 = null;
+    Game game6 = null;
+    Game game7 = null;
+    Game game8 = null;
+
+    @BeforeEach
+    public void beforeEach() {
+        store = new GameStore();
+        game1 = store.publishGame("Igra1", "Fights");
+        game2 = store.publishGame("Igra2", "Fights");
+        game3 = store.publishGame("Igra3", "Race");
+        game4 = store.publishGame("Igra4", "Race");
+        game5 = store.publishGame("Igra5", "MMORPG");
+        game6 = store.publishGame("Igra6", "MMORPG");
+        game7 = store.publishGame("Igra7", "Аркады");
+        game8 = store.publishGame("Igra8", "Аркады");
+    }
 
     @Test
     public void shouldSumGenreIfOneGame() {
