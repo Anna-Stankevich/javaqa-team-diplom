@@ -30,14 +30,22 @@ public class GameStoreTest {
         Game game = store.publishGame("Нетология Баттл Онлайн", "Аркады");
         Game expect = new Game("Нетология Баттл Онлайн", "Аркады", store);
 
-        assertTrue(expect.equals(game));
+        assertEquals(expect, game);
+    }
+
+
+    @Test
+    public void GameNotInStore() {
+        Game game = new Game("another", "another", store);
+
+        assertFalse(store.containsGame(game));
     }
 
     //Тесты по информация о проигранном времени игроками(в том числе статистика);
 
     @Test
     public void CheckMethodGetMostPlayer_WithoutValue() {
-        assertEquals(null, store.getMostPlayer());
+        assertNull(store.getMostPlayer());
     }
 
     @Test
