@@ -56,7 +56,7 @@ public class GameStore {
      * времени. Если игроков нет, то возвращется null
      */
     public String getMostPlayer() {
-        int mostTime = 1;
+        int mostTime = 0;
         String bestPlayer = null;
         for (String playerName : playedTime.keySet()) {
             int playerTime = playedTime.get(playerName);
@@ -73,8 +73,8 @@ public class GameStore {
      * за играми этого каталога
      */
     public int getSumPlayedTime() {
-        int sum =0;
-        for (int value: playedTime.values()) {
+        int sum = 0;
+        for (int value : playedTime.values()) {
             sum += value;
         }
         return sum;

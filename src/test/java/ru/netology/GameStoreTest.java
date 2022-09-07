@@ -36,6 +36,7 @@ public class GameStoreTest {
 
     @Test
     public void GameNotInStore() {
+        store.publishGame("Нетология Баттл Онлайн", "Аркады");
         Game game = new Game("another", "another", store);
 
         assertFalse(store.containsGame(game));
